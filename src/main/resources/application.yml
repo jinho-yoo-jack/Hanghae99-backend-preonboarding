@@ -1,0 +1,25 @@
+spring:
+  h2:
+    console:
+      enabled: true
+
+  datasource:
+    url: jdbc:h2:mem:testdb;NON_KEYWORDS=USER
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: create-drop # SessionFactoryr? ??? ? Drop, Create, Alter ??? ? Drop
+    properties:
+      hibernate:
+        format_sql: true
+        show_sql: ture
+    defer-datasource-initialization: true
+jwt:
+  header: Authorization
+  secret: a71b8a7edfd427da96e2460b24b6eebe7bd0a6c24aae5a3b0728e843e29f632809a717e6c0825c979def91612c625e70d821a51512fed72ff18aca638a7c4c41
+  token-validity-in-milliseconds: 86400 # ttl (Sec)
+
